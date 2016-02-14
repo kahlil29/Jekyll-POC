@@ -1,23 +1,32 @@
 ---
 layout: default
+title: Support
 ---
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
+ 
+<section class="col-md-12">
+  <h2>Category Page</h2>
+ 
+  <p>Check out categories below!</p>
+</section>
+ 
+<ul class="entries">
+  {% for post1 in site.posts %}
+  {% if post1.type == "category" %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+	    <a href="">
+	      <h1>{{ post1.title }}</h1>
+	    </a>
+	  </li>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  {% for post2 in site.posts %}
+  {% if post2.category == post1.title %}
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+	    <a href="{{ post2.url }}">
+	      <h1>{{ post2.title }}</h1>
+	    </a>
+  {% endif %}
+  {% endfor %}
 
-</div>
+  {% endif %}
+  {% endfor %}
+</ul>
