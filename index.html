@@ -1,32 +1,54 @@
 ---
-layout: default
-title: Support
+layout: all-category
+title: Article Categories
 ---
- 
-<section class="col-md-12">
-  <h2>Category Page</h2>
- 
-  <p>Check out categories below!</p>
-</section>
- 
-<ul class="entries">
-  {% for post1 in site.posts %}
-  {% if post1.type == "category" %}
-      <li>
-	    <a href="">
-	      <h1>{{ post1.title }}</h1>
-	    </a>
-	  </li>
 
-  {% for post2 in site.posts %}
-  {% if post2.category == post1.title %}
+<div class="row">
+  <div class="col-sm-6 topic">
+    <a href="#">
+      <span class="icon ion-clipboard"></span>
+      <strong>Getting Started</strong>
+    </a>
+    <p>
+      Get all support here on how to integrate our product with your website, how to integrate payment gateway, how to create first trip etc.
+    </p>
+    {% include index-article-list.html type='getting-started' %}
+  </div>
 
-	    <a href="{{ post2.url }}">
-	      <h1>{{ post2.title }}</h1>
-	    </a>
-  {% endif %}
-  {% endfor %}
+  <div class="col-sm-6 topic">
+    <a href="#">
+      <span class="icon ion-earth"></span>
+      <strong>Managing your trips</strong>
+    </a>
+    <p>
+      All support articles to help you manage your trips without any pains!
+    </p>
+    {% include index-article-list.html type='managing-your-trips' %}
+  </div>
 
-  {% endif %}
-  {% endfor %}
-</ul>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 topic">
+    <a href="#">
+      <span class="icon ion-social-buffer"></span>
+      <strong>Other features</strong>
+    </a>
+    <p>
+      Learn how to create coupons, filter bookings or use Vacation Labs dashboard here.
+    </p>
+    {% include index-article-list.html type='other-features' %}
+  </div>
+
+  <div class="col-sm-6 topic">
+    <a href="#">
+      <span class="icon ion-briefcase"></span>
+      <strong>Using your Storefront</strong>
+    </a>
+    <p>
+      Become aware of your storefront and how to customize it, add custom SEO tags to optimize your page for searches and get a hang of the CMS.
+    </p>
+    {% include index-article-list.html type='using-your-storefront' %}
+  </div>
+
+</div>
