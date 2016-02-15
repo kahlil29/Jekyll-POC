@@ -5,7 +5,7 @@ title:  "Configure your account settings"
 meta_title: 
 short_discription: "The Settings page has multiple categories on the left navigation bar.   The Settings page lets you edit the Support details that you provided while registering for vacation labs."
 youtube_url: 
-srt_url: 
+srt_url: subtitles/srt/Basic_Details.srt
 layout: article
 ---
 
